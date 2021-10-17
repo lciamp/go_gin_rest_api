@@ -16,9 +16,10 @@ type driver struct {
 }
 
 // slice to populate driver data
-var drivers = []driver {
+var drivers = []driver{
 	{ID: "1", FirstName: "Charles", LastName: "LeClerc", Team: "Scuderia Ferrari", Number: 16},
-}{ID: "2", FirstName: "Carlos", LastName: "Sainz", Team: "Scuderia Ferrari", Number: 55}
+	{ID: "2", FirstName: "Carlos", LastName: "Sainz", Team: "Scuderia Ferrari", Number: 55},
+}
 
 // main func, create & run the server, add the endpoints
 func main () {
