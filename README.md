@@ -39,5 +39,5 @@ curl http://localhost:8080/drivers \
     --include \
     --header "Content-Type: application/json" \
     --request "POST" \
-    --data '{"id": "3","FirstName": "Lewis"," LastName": "Hamilton", "Team": "Mercedes AMG Petronas", "Number": 44}'
+    --data '{"id": "3", "FirstName": "Lewis"," LastName": "Hamilton", "Team": "Mercedes AMG Petronas", "Number": 44}'
 ```
