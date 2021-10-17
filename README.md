@@ -98,7 +98,9 @@ gin logging:
 ```
 
 ## Driver by ID:
-```curl localhost:8080/drivers/1``` result:
+```curl localhost:8080/drivers/1``` 
+
+Result:
 
 ```
 {
