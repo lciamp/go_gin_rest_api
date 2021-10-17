@@ -21,4 +21,5 @@ EXPOSE 8080
 # run
 CMD [ "/docker-main" ]
 
-# docker build --tag docker-f1 .
+# docker build -t docker-f1 .
+# docker run -d docker-f1:latest
