@@ -27,7 +27,7 @@ func main () {
 	router := gin.Default()
 	router.GET("/drivers", getDrivers)
 	router.POST("/drivers", postDrivers)
-	router.POST("/drivers/:id", getDriverByID)
+	router.GET("/drivers/:id", getDriverByID)
 
 	// run server
 	router.Run("localhost:8080")
