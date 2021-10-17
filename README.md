@@ -5,6 +5,8 @@ go-gin-rest-api
 
 ```go run .``` to start server
 
+## List Drivers:
+
 ```curl localhost:8080/drivers``` result:
 ```
 [
@@ -29,4 +31,13 @@ Gin logging:
 ```[GIN-debug] GET    /drivers                  --> main.getDrivers (3 handlers)
 [GIN-debug] Listening and serving HTTP on localhost:8080
 [GIN] 2021/10/16 - 22:40:57 | 200 |     141.856µs |       127.0.0.1 | GET      "/drivers"
+```
+
+## Add Driver:
+```bigquery
+curl http://localhost:8080/drivers \
+    --include \
+    --header "Content-Type: application/json" \
+    --request "POST" \
+    --data '{"id": "3","FirstName": "Lewis"," LastName": "Hamilton", "Team": "Mercedes AMG Petronas", "Number": 44}'
 ```
