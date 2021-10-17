@@ -21,6 +21,7 @@ var drivers = []driver {
 	{ID: "2", FirstName: "Carlos", LastName: "Sainz", Team: "Scuderia Ferrari", Number: 55},
 }
 
+// main func, run the server, add the drivers endpoint
 func main () {
 	router := gin.Default()
 	router.GET("/drivers", getDrivers)
