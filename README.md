@@ -1,4 +1,4 @@
-# go-gin-rest-api
+# go-gin-rest-api-f1
 go-gin-rest-api
 
 Tutorial from: https://golang.org/doc/tutorial/web-service-gin
