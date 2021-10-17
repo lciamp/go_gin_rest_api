@@ -25,6 +25,7 @@ var drivers = []driver {
 func main () {
 	router := gin.Default()
 	router.GET("/drivers", getDrivers)
+	router.POST("drivers/", postDrivers)
 
 	router.Run("localhost:8080")
 }
@@ -35,7 +36,7 @@ func getDrivers(c *gin.Context) {
 }
 
 // POST driver, add a driver from JSON in request body
-func postDriver(c *gin.Context) {
+func postDrivers(c *gin.Context) {
 	var newDriver driver
 
 	// call BindJSON to bind the received JSON to driver
