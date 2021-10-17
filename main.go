@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"github.com/gin-gonic/gin"
 	"net/http"
 )
@@ -30,4 +31,20 @@ func main () {
 // get all drivers, responds with json list
 func getDrivers(c *gin.Context) {
 	c.IndentedJSON(http.StatusOK, drivers)
+}
+
+// POST driver, add a driver from JSON in request body
+func postDriver(c *gin.Context) {
+	var newDriver driver
+
+	// call BindJSON to bind the received JSON to driver
+	err := c.BindJSON(&newDriver)
+	checkError("Could not bind JSON for new driver: ", err)
+}
+
+// function for checking for errors
+func checkError(message string, err error) {
+	if err != nil {
+		fmt.Errorf("%s: %s\n", message, err)
+	}
 }
