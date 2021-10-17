@@ -6,7 +6,8 @@ go-gin-rest-api
 ```go run .``` to start server
 
 ```curl localhost:8080/drivers``` result:
-```[
+```
+[
     {
         "id": "1",
         "firstName": "Charles",
