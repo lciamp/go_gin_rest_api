@@ -10,7 +10,9 @@ I just used F1 Drivers.
 
 ## List Drivers:
 
-```curl localhost:8080/drivers``` result:
+```curl localhost:8080/drivers``` 
+
+Result:
 ```
 [
     {
