@@ -22,7 +22,7 @@ var drivers = []driver{
 }
 
 // main func, create & run the server, add the endpoints
-func main () {
+func main() {
 	// create server, add endpoints
 	router := gin.Default()
 	router.GET("/drivers", getDrivers)
@@ -54,7 +54,7 @@ func postDrivers(c *gin.Context) {
 // getDriverByID func
 func getDriverByID(c *gin.Context) {
 	// get id from url
-	id = c.Param("id")
+	id := c.Param("id")
 
 	// loop through drivers to match id
 	for _, d := range drivers {
