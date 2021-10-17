@@ -40,6 +40,9 @@ func postDriver(c *gin.Context) {
 	// call BindJSON to bind the received JSON to driver
 	err := c.BindJSON(&newDriver)
 	checkError("Could not bind JSON for new driver: ", err)
+
+	drivers = append(drivers, newDriver)
+	c.IndentedJSON(http.StatusCreated, newDriver)
 }
 
 // function for checking for errors
