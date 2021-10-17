@@ -8,6 +8,8 @@ I just used F1 Drivers.
 
 ```go run .``` to start server
 
+All logic is in ```main.go```
+
 ## List Drivers:
 
 ```curl localhost:8080/drivers``` 
