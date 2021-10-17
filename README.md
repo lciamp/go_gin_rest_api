@@ -94,3 +94,21 @@ gin logging:
 [GIN] 2021/10/16 - 23:26:35 | 201 |     129.192µs |       127.0.0.1 | POST     "/drivers"
 [GIN] 2021/10/16 - 23:26:59 | 200 |      67.174µs |       127.0.0.1 | GET      "/drivers"
 ```
+
+## Driver by ID:
+```curl localhost:8080/drivers/1``` result:
+
+```
+{
+    "id": "1",
+    "firstName": "Charles",
+    "lastName": "LeClerc",
+    "team": "Scuderia Ferrari",
+    "number": 16
+}
+```
+
+gin logging: 
+```
+[GIN] 2021/10/17 - 01:11:18 | 200 |     103.605µs |       127.0.0.1 | GET      "/drivers/1"
+```
