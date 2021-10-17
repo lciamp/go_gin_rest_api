@@ -41,6 +41,7 @@ func postDriver(c *gin.Context) {
 	err := c.BindJSON(&newDriver)
 	checkError("Could not bind JSON for new driver: ", err)
 
+	// add new driver to drivers slice
 	drivers = append(drivers, newDriver)
 	c.IndentedJSON(http.StatusCreated, newDriver)
 }
