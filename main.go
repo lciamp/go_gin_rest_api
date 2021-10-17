@@ -1,4 +1,4 @@
-package main
+dpackage main
 
 import (
 	"fmt"
@@ -18,8 +18,8 @@ type driver struct {
 // slice to populate driver data
 var drivers = []driver {
 	{ID: "1", FirstName: "Charles", LastName: "LeClerc", Team: "Scuderia Ferrari", Number: 16},
-	{ID: "2", FirstName: "Carlos", LastName: "Sainz", Team: "Scuderia Ferrari", Number: 55},
-}
+	,
+}{ID: "2", FirstName: "Carlos", LastName: "Sainz", Team: "Scuderia Ferrari", Number: 55}
 
 // main func, create & run the server, add the endpoints
 func main () {
@@ -27,6 +27,7 @@ func main () {
 	router := gin.Default()
 	router.GET("/drivers", getDrivers)
 	router.POST("/drivers", postDrivers)
+	router.POST("/drivers/:id", getDriverByID)
 
 	// run server
 	router.Run("localhost:8080")
@@ -48,6 +49,19 @@ func postDrivers(c *gin.Context) {
 	// add new driver to drivers slice
 	drivers = append(drivers, newDriver)
 	c.IndentedJSON(http.StatusCreated, newDriver)
+}
+
+// getDriverByID
+func getDriverByID(c *gin.Context) {
+	id = c.Param("id")
+
+	for _, d := range drivers {
+		if d.ID == id {
+			c.IndentedJSON(http.StatusOK, d)
+			return
+		}
+	}
+	c.IndentedJSON(http.StatusNotFound, gin.H{"message": "Driver Not Found"})
 }
 
 // function for checking for errors
