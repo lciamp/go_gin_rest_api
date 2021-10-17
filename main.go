@@ -51,16 +51,19 @@ func postDrivers(c *gin.Context) {
 	c.IndentedJSON(http.StatusCreated, newDriver)
 }
 
-// getDriverByID
+// getDriverByID func
 func getDriverByID(c *gin.Context) {
+	// get id from url
 	id = c.Param("id")
 
+	// loop through drivers to match id
 	for _, d := range drivers {
 		if d.ID == id {
 			c.IndentedJSON(http.StatusOK, d)
 			return
 		}
 	}
+	// 404 if no ids match
 	c.IndentedJSON(http.StatusNotFound, gin.H{"message": "Driver Not Found"})
 }
 
