@@ -42,7 +42,7 @@ curl http://localhost:8080/drivers \
     --include \
     --header "Content-Type: application/json" \
     --request "POST" \
-    --data '{"id": "3", "FirstName": "Lewis"," LastName": "Hamilton", "Team": "Mercedes AMG Petronas", "Number": 44}'
+    --data '{"id": "3", "FirstName": "Lewis", "LastName": "Hamilton", "Team": "Mercedes AMG Petronas", "Number": 44}'
 ```
 
 Result:
@@ -51,7 +51,7 @@ Result:
     --include \
     --header "Content-Type: application/json" \
     --request "POST" \
-    --data '{"id": "3", "FirstName": "Lewis"," LastName": "Hamilton", "Team": "Mercedes AMG Petronas", "Number": 44}'
+    --data '{"id": "3", "FirstName": "Lewis", "LastName": "Hamilton", "Team": "Mercedes AMG Petronas", "Number": 44}'
 HTTP/1.1 201 Created
 Content-Type: application/json; charset=utf-8
 Date: Sun, 17 Oct 2021 03:26:35 GMT
@@ -84,7 +84,7 @@ Content-Length: 118
     {
         "id": "3",
         "firstName": "Lewis",
-        "lastName": "",
+        "lastName": "Hamilton",
         "team": "Mercedes AMG Petronas",
         "number": 44
     }
