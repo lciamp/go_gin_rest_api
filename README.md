@@ -60,7 +60,7 @@ Content-Length: 118
 {
     "id": "3",
     "firstName": "Lewis",
-    "lastName": "",
+    "lastName": "Hamilton",
     "team": "Mercedes AMG Petronas",
     "number": 44
 }%
