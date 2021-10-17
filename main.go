@@ -6,7 +6,7 @@ import (
 )
 
 // driver data struct
-type driver struct{
+type driver struct {
 	ID        string `json:"id"`
 	FirstName string `json:"firstName"`
 	LastName  string `json:"lastName"`
@@ -15,9 +15,16 @@ type driver struct{
 }
 
 // slice to populate driver data
-var drivers = []driver{
+var drivers = []driver {
 	{ID: "1", FirstName: "Charles", LastName: "LeClerc", Team: "Scuderia Ferrari", Number: 16},
 	{ID: "2", FirstName: "Carlos", LastName: "Sainz", Team: "Scuderia Ferrari", Number: 55},
+}
+
+func main () {
+	router := gin.Default()
+	router.GET("/drivers", getDrivers)
+
+	router.Run("localhost:8080")
 }
 
 // get all drivers, responds with json list
