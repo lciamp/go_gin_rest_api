@@ -91,8 +91,6 @@ Content-Length: 118
 gin logging:
 ```
 [GIN-debug] Listening and serving HTTP on localhost:8080
-[GIN] 2021/10/16 - 23:26:16 | 200 |     145.525µs |       127.0.0.1 | GET      "/drivers"
-[GIN] 2021/10/16 - 23:26:16 | 404 |         556ns |       127.0.0.1 | GET      "/favicon.ico"
 [GIN] 2021/10/16 - 23:26:35 | 201 |     129.192µs |       127.0.0.1 | POST     "/drivers"
 [GIN] 2021/10/16 - 23:26:59 | 200 |      67.174µs |       127.0.0.1 | GET      "/drivers"
 ```
