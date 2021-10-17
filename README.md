@@ -41,3 +41,58 @@ curl http://localhost:8080/drivers \
     --request "POST" \
     --data '{"id": "3", "FirstName": "Lewis"," LastName": "Hamilton", "Team": "Mercedes AMG Petronas", "Number": 44}'
 ```
+
+Result:
+```
+~ » curl http://localhost:8080/drivers \                                                                                                        lou@Lous-iMac
+    --include \
+    --header "Content-Type: application/json" \
+    --request "POST" \
+    --data '{"id": "3", "FirstName": "Lewis"," LastName": "Hamilton", "Team": "Mercedes AMG Petronas", "Number": 44}'
+HTTP/1.1 201 Created
+Content-Type: application/json; charset=utf-8
+Date: Sun, 17 Oct 2021 03:26:35 GMT
+Content-Length: 118
+
+{
+    "id": "3",
+    "firstName": "Lewis",
+    "lastName": "",
+    "team": "Mercedes AMG Petronas",
+    "number": 44
+}%
+------------------------------------------------------------
+~ » curl http://localhost:8080/drivers                                                                                                          lou@Lous-iMac
+[
+    {
+        "id": "1",
+        "firstName": "Charles",
+        "lastName": "LeClerc",
+        "team": "Scuderia Ferrari",
+        "number": 16
+    },
+    {
+        "id": "2",
+        "firstName": "Carlos",
+        "lastName": "Sainz",
+        "team": "Scuderia Ferrari",
+        "number": 55
+    },
+    {
+        "id": "3",
+        "firstName": "Lewis",
+        "lastName": "",
+        "team": "Mercedes AMG Petronas",
+        "number": 44
+    }
+]
+```
+
+gin logging:
+```
+[GIN-debug] Listening and serving HTTP on localhost:8080
+[GIN] 2021/10/16 - 23:26:16 | 200 |     145.525µs |       127.0.0.1 | GET      "/drivers"
+[GIN] 2021/10/16 - 23:26:16 | 404 |         556ns |       127.0.0.1 | GET      "/favicon.ico"
+[GIN] 2021/10/16 - 23:26:35 | 201 |     129.192µs |       127.0.0.1 | POST     "/drivers"
+[GIN] 2021/10/16 - 23:26:59 | 200 |      67.174µs |       127.0.0.1 | GET      "/drivers"
+```
